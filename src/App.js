@@ -40,6 +40,7 @@ class App extends Component {
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">MLS Salaries - Analysis</h1>
+                    <p>By David</p>
                 </header>
 
                 <h2>Average Salary per Year</h2>
@@ -113,6 +114,13 @@ class App extends Component {
                 </div>
 
                 {/* <img src={birthmap} alt="birth-map" className="map"/> */}
+                <footer>
+                    <div class="container">
+                        <p class="copyright">
+                            &copy; 2017 | David Israwi Yordi. All Rights Reserved.
+                        </p>
+                    </div>
+                </footer>
             </div>
         );
     }
