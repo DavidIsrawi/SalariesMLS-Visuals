@@ -44,7 +44,7 @@ class App extends Component {
                 </header>
 
                 <h2>Average Salary per Year</h2>
-                <p className="intro"> Since 2007, MLS has increased its popularity -- bringing more revenue to the organization, and an opportunity to increase the budget for each team. According to Forbes, MLS is the <strong>fastest growing U.S. pro league on social,</strong> across its social platforms, MLS has increased 95% from 2015 to 2016 while almost 690% percent since 2013.</p>
+                <p className="intro"> Since 2007, MLS has increased its popularity -- bringing more revenue to the organization and an opportunity to increase the budget for each team. According to Forbes, MLS is the <strong>fastest growing U.S. pro league on social media.</strong> Across its social platforms, MLS has grown by a 95% from 2015 to 2016 while almost 690% since 2013.</p>
 
                 <div className={'chart-container'}>
                     <Chart
@@ -70,7 +70,7 @@ class App extends Component {
                 </div>
 
                 <h2>Maximum Salary per Year</h2>
-                <p className="intro">In the last decade, MLS has been continuosly boasting athletes from all over the world. According to the MLS official website, <strong>nearly half of the players in MLS were born outside the US and Canada,</strong> with the most influence coming from Argentina and England. By 2015, a total of <strong>315 players</strong> were originate from US and Canada, compare to <strong>236 players</strong> hailing from South America, Europe, Africa, and more.</p>
+                <p className="intro">In the last decade, MLS has been continuously boasting athletes from all over the world. According to the MLS official website, <strong>nearly half of the players in MLS were born outside the US and Canada,</strong> with the most influence coming from Argentina and England. By 2015, a total of <strong>315 players</strong> were originated from US and Canada, compared to <strong>236 players</strong> hailing from South America, Europe, Africa, and more.</p>
 
                 <div className='chart-container'>
                     <Chart
@@ -89,7 +89,7 @@ class App extends Component {
 
                 <h2>Now in 2017</h2>
 
-                <p className="intro">MLS has shown continuous growth in the last decade. According to MLS, <strong>more than 3.5 million viewers</strong> in the US and Canada tuned in last year to watch the MLS cup match between Seattle Sounders and Toronto FC, a 117% increase from the previous year's final. MLS is today <strong>the most diverse professional sports league in North America.</strong></p>
+                <p className="intro">MLS has shown continuous growth in the last decade. According to MLS, <strong>more than 3.5 million viewers</strong> in the US and Canada tuned in last year to watch the MLS cup match between Seattle Sounders and Toronto FC, a 117% increase from the previous year's final. MLS today is <strong>the most diverse professional sports league in North America.</strong></p>
 
                 <div className="container">
                     {Object.keys(teams).map(team =>
