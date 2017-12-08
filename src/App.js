@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import logo from './MLSlogo.svg';
-import birthmap from './birthmap.png';
+
 import { Chart } from 'react-google-charts';
 import data from './DataMLS';
+
 import TeamCard from './TeamCard';
+import SalaryDonut from './SalaryDonut';
+
+import logo from './MLSlogo.svg';
 import './App.css';
 
 const overall = data[0].overall;
@@ -30,9 +33,20 @@ Object.keys(overall).map(year => {
         overall[year]["salary_max"]["F"]
     ]);
 })
-console.log(teams);
 
 class App extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            team:'ORL'
+        };
+    }
+
+    selectTeam(e) {
+        var team = e.target.innerHTML
+        this.setState({team:team});
+    }
 
     render() {
         return (
@@ -43,7 +57,8 @@ class App extends Component {
                     <p>By David</p>
                 </header>
 
-                <h2>Average Salary per Year</h2>
+                <h1 className="section">A Decade of Growth</h1>
+                <h2>Average Salary</h2>
                 <p className="intro"> Since 2007, MLS has increased its popularity -- bringing more revenue to the organization and an opportunity to increase the budget for each team. According to Forbes, MLS is the <strong>fastest growing U.S. pro league on social media.</strong> Across its social platforms, MLS has grown by a 95% from 2015 to 2016 while almost 690% since 2013.</p>
 
                 <div className={'chart-container'}>
@@ -69,7 +84,7 @@ class App extends Component {
                     />
                 </div>
 
-                <h2>Maximum Salary per Year</h2>
+                <h2>Maximum Salary</h2>
                 <p className="intro">In the last decade, MLS has been continuously boasting athletes from all over the world. According to the MLS official website, <strong>nearly half of the players in MLS were born outside the US and Canada,</strong> with the most influence coming from Argentina and England. By 2015, a total of <strong>315 players</strong> were originated from US and Canada, compared to <strong>236 players</strong> hailing from South America, Europe, Africa, and more.</p>
 
                 <div className='chart-container'>
@@ -87,21 +102,34 @@ class App extends Component {
                     />
                 </div>
 
-                <h2>Now in 2017</h2>
+                <h1 className="section">Now in 2017</h1>
+                <h2>Average Salary</h2>
 
                 <p className="intro">MLS has shown continuous growth in the last decade. According to MLS, <strong>more than 3.5 million viewers</strong> in the US and Canada tuned in last year to watch the MLS cup match between Seattle Sounders and Toronto FC, a 117% increase from the previous year's final. MLS today is <strong>the most diverse professional sports league in North America.</strong></p>
 
+
+                <div className="dropdown">
+                    <button className="dropbtn">{this.state.team} &#9660;</button>
+                    <div className="dropdown-content">
+                        {Object.keys(teams).map(team =>
+                            <a key={team+"Opt"} onClick={this.selectTeam.bind(this)}>{team}</a>
+                        )}
+                    </div>
+                </div>
+                <div className="container">
+                    <SalaryDonut
+                        positions={teams[this.state.team]["salary_avg"]}
+                        team={this.state.team}
+                    />
+                </div>
+
+                <h2>Highest Salaries</h2>
+
+                <p>As part of MLS campaign to gather their fan base, the organization has been recruiting many international world-reknown players. Many of the highest salaries per team this year go to these players - this is a strong investment from each team, usually returned in the increase in popularity of the team.</p>
+
                 <div className="container">
                     {Object.keys(teams).map(team =>
-                        <div style={{marginTop:'3%', width:'40%'}}>
-                            {/* <div className="team-card">
-                            <h3>{team}</h3>
-                            <h4> Approximate budget for players: {teams[team]["budget"]}</h4>
-                            <h4> Highest paid player</h4>
-                            <h5> {teams[team]["salary_max_player"]} </h5>
-                            <h5> Position: {teams[team]["salary_max_position"]}</h5>
-                            <h5> Base salary: {teams[team]["salary_max"]}</h5>
-                        </div> */}
+                        <div key={team+"max"} style={{marginTop:'3%', width:'28%'}}>
 
                         <TeamCard
                             team={team}
@@ -113,10 +141,9 @@ class App extends Component {
                     )}
                 </div>
 
-                {/* <img src={birthmap} alt="birth-map" className="map"/> */}
                 <footer>
-                    <div class="container">
-                        <p class="copyright">
+                    <div className="container">
+                        <p className="copyright">
                             &copy; 2017 | David Israwi Yordi. All Rights Reserved.
                         </p>
                     </div>

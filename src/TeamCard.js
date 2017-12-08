@@ -10,11 +10,11 @@ class TeamCard extends Component {
         return(
             <div className="team">
                 <h3>{this.props.team}</h3>
-                <p> <b>Appr. Player Budget:</b> {budget}</p>
-                <p> <b>Highest paid player: </b></p>
-                <p> {this.props.player} </p>
-                <p> <b>Position:</b> {this.props.position}</p>
-                <p> <b>Base salary:</b> {salary}</p>
+                <p>Appr. Player Budget: {budget}</p>
+                <p>Highest paid player:</p>
+                <p className="player">{this.props.player} </p>
+                <p>Position: {this.props.position}</p>
+                <p>Base salary: {salary}</p>
             </div>
         );
     }
