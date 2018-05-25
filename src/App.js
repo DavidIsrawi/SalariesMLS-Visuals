@@ -54,7 +54,7 @@ class App extends Component {
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">MLS Salaries - Analysis</h1>
-                    <p>By David</p>
+                    <p>By <a className="website" href="http://davidisrawi.me/">David</a></p>
                 </header>
 
                 <h1 className="section">A Decade of Growth</h1>
