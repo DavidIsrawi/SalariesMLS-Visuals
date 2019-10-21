@@ -4,10 +4,10 @@ import './TeamCard.css';
 
 class TeamCard extends Component {
     render() {
-        var budget = "$"+this.props.budget.toLocaleString();
-        var salary = "$"+this.props.salary.toLocaleString();
+        var budget = "$" + this.props.budget.toLocaleString();
+        var salary = "$" + this.props.salary.toLocaleString();
 
-        return(
+        return (
             <div className="team">
                 <h3>{this.props.team}</h3>
                 <p>Appr. Player Budget: {budget}</p>
