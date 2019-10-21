@@ -39,13 +39,13 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            team:'ORL'
+            team: 'ORL'
         };
     }
 
     selectTeam(e) {
         var team = e.target.innerHTML
-        this.setState({team:team});
+        this.setState({ team: team });
     }
 
     render() {
@@ -67,7 +67,7 @@ class App extends Component {
                         data={avgSalaryYearData}
                         options={{
                             title: 'Average Salary in MLS',
-                            chartArea: {width: '50%'},
+                            chartArea: { width: '50%' },
                             isStacked: true,
                             hAxis: {
                                 title: 'Budget per row of positions',
@@ -112,7 +112,7 @@ class App extends Component {
                     <button className="dropbtn">{this.state.team} &#9660;</button>
                     <div className="dropdown-content">
                         {Object.keys(teams).map(team =>
-                            <a key={team+"Opt"} onClick={this.selectTeam.bind(this)}>{team}</a>
+                            <a key={team + "Opt"} onClick={this.selectTeam.bind(this)}>{team}</a>
                         )}
                     </div>
                 </div>
@@ -129,14 +129,14 @@ class App extends Component {
 
                 <div className="container">
                     {Object.keys(teams).map(team =>
-                        <div key={team+"max"} style={{marginTop:'3%', width:'28%'}}>
+                        <div key={team + "max"} style={{ marginTop: '3%', width: '28%' }}>
 
-                        <TeamCard
-                            team={team}
-                            budget={teams[team]["budget"]}
-                            player={teams[team]["salary_max_player"]}
-                            position={teams[team]["salary_max_position"]}
-                            salary={teams[team]["salary_max"]}/>
+                            <TeamCard
+                                team={team}
+                                budget={teams[team]["budget"]}
+                                player={teams[team]["salary_max_player"]}
+                                position={teams[team]["salary_max_position"]}
+                                salary={teams[team]["salary_max"]} />
                         </div>
                     )}
                 </div>
